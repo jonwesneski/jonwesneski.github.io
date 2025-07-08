@@ -1,2 +1,4 @@
-# jonwesneski.github.io
-Portfolio
+# jonwesneski Portfolio
+
+## Getting Started
+- TODO
