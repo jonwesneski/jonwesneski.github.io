@@ -33,8 +33,8 @@ export default function Contact() {
 
       setSuccess(true);
       setFormData({ name: '', email: '', message: '' }); // Clear form
-    } catch (err: any) {
-      setError(err.message || 'An error occurred.');
+    } catch (err) {
+      setError((err as Error).message || 'An error occurred.');
     } finally {
       setLoading(false);
     }
