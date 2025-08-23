@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Link from "next/link";
 import { NavBar } from "./_components";
 import { ChangeTheme } from "./_components/ChangeTheme";
+import TextLink from "./_components/TextLink";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -31,12 +31,22 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavBar>
-          <Link href="/#about-me">About Me</Link>
-          <Link href="/#about-me">Projects</Link>
-          <Link href="/#contact">Contact</Link>
+          <TextLink href="/#about-me" text="About Me" targetBlank={false} />
+          <TextLink href="/#projects" text="Projects" targetBlank={false} />
+          <TextLink href="/#contact" text="contact" targetBlank={false} />
           <ChangeTheme />
         </NavBar>
+
         {children}
+
+        <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+          Connect on:{" "}
+          <TextLink
+            href="https://www.linkedin.com/in/jon-wesneski/"
+            targetBlank
+            text="LinkedIn"
+          />
+        </footer>
       </body>
     </html>
   );
