@@ -3,7 +3,7 @@ import Project from "./Project";
 export default function Projects() {
   return (
     <section>
-      <h1>Projects</h1>
+      <h1 className="font-bold my-2">Projects</h1>
       <Project
         title="Recipehall"
         description="A social media app for recipes"

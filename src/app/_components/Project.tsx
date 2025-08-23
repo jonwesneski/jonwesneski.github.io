@@ -19,6 +19,7 @@ export default function Project(props: IProjectProps) {
             href={l.href}
             text={l.text}
             targetBlank={l.targetBlank}
+            className="mx-2 mt-1"
           />
         );
       })}
