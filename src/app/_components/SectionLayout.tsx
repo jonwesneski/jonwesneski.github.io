@@ -19,8 +19,8 @@ export default function SectionLayout({
       id={props.id}
       className={mergeCss(
         "min-h-screen flex flex-col justify-center p-20",
-        { "bg-white text-black": variant === "whiteBlack" },
-        { "bg-black text-white": variant === "blackWhite" },
+        { "bg-background text-text": variant === "whiteBlack" },
+        { "bg-text text-background": variant === "blackWhite" },
         props.className
       )}
     >

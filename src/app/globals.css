@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
-@theme inline {
+@theme {
+  /* Color Paletts with https://www.colorpalett.es/ */
+  /* --color-primary-50: oklch(91.45% 0.023 264); */
+
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-marged-background: var(--margined-background);
+  --color-input-focus-background: var(--input-focus-background);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
+  :root {
+    --background: #fff;
+    --margined-background: #fff;
+    --input-focus-background: #fff;
+    --foreground: #000;
+    --border: #000;
+    --text: #000;
+    --muted: #4444447b;
+  }
+
+  [data-theme="dark"] {
+    --background: #000;
+    --margined-background: #000;
+    --input-focus-background: #000;
+    --foreground: #fff;
+    --border: #fff;
+    --text: #fff;
+    --muted: #bbbbbb7b;
+  }
+}
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
