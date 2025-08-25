@@ -27,23 +27,26 @@ export const ChangeTheme = (props: IChangeThemeProps) => {
   };
 
   return (
-    <button
-      className={mergeCss(
-        "w-16 h-8 flex items-center rounded-full p-1 duration-300",
-        {
-          "bg-blue-600": isWhiteBlack,
-          "bg-gray-300": !isWhiteBlack,
-        },
-        props.className
-      )}
-      onClick={() => handleLightDarkMode()}
-      aria-pressed={isWhiteBlack}
-    >
-      <span
-        className={`bg-white w-6 h-6 rounded-full shadow-md transform duration-300 ${
-          isWhiteBlack ? "" : "translate-x-8"
-        }`}
-      ></span>
-    </button>
+    <div>
+      <span className="block mx-auto w-fit">Theme</span>
+      <button
+        className={mergeCss(
+          "w-16 h-3 flex items-center rounded-full p-1 mt-1 duration-300",
+          {
+            "bg-orange-500": isWhiteBlack,
+            "bg-gray-300": !isWhiteBlack,
+          },
+          props.className
+        )}
+        onClick={() => handleLightDarkMode()}
+        aria-pressed={isWhiteBlack}
+      >
+        <span
+          className={`bg-white w-6 h-6 rounded-full shadow-md transform duration-300 ${
+            isWhiteBlack ? "" : "translate-x-8"
+          }`}
+        ></span>
+      </button>
+    </div>
   );
 };
