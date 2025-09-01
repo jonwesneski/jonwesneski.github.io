@@ -36,13 +36,18 @@
   }
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
 body {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-black-white {
+  color: var(--color-text);
+  -webkit-text-stroke: 5px var(--color-background);
+  paint-order: stroke fill;
+}
+
+.text-white-black {
+  color: var(--color-background);
+  -webkit-text-stroke: 5px var(--color-text);
+  paint-order: stroke fill;
 }
