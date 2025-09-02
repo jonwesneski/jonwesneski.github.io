@@ -4,7 +4,7 @@ export default function About() {
   return (
     <>
       <h1 className="text-2xl font-bold my-2 text-white-black">About Me</h1>
-      <span className="my-2 border-2">Hi, I am Jon Wesneski</span>
+      <p className="my-2">Hi, I am Jon Wesneski</p>
       <p className="my-2">
         As a Fullstack Developer and seasoned Software Development Engineer in
         Test (SDET), I specialize in building robust, scalable web applications
