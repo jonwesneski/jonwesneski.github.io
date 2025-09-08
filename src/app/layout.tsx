@@ -39,7 +39,7 @@ export default function RootLayout({
 
         {children}
 
-        <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+        <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center border-t border-text">
           Connect on:{" "}
           <TextLink
             href="https://www.linkedin.com/in/jon-wesneski/"

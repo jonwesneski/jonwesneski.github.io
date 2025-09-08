@@ -8,7 +8,7 @@ export const NavBar = ({ children }: { children: React.ReactNode }) => {
   return (
     <nav
       className={mergeCss(
-        "fixed left-0 right-0 z-50 flex py-4 justify-center items-center gap-4 bg-background text-text",
+        "fixed left-0 right-0 z-50 flex py-4 justify-center items-center gap-4 bg-background text-text border-b border-text",
         {
           "bottom-0": width < breakpointPxs.md,
           "top-0": width >= breakpointPxs.md,

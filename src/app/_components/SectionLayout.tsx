@@ -18,13 +18,13 @@ export default function SectionLayout({
     <section
       id={props.id}
       className={mergeCss(
-        "min-h-screen flex flex-col justify-center p-20",
+        "min-h-screen flex flex-col justify-center",
         { "bg-background text-text": variant === "whiteBlack" },
         { "bg-text text-background": variant === "blackWhite" },
         props.className
       )}
     >
-      {props.children}
+      <div className="max-w-2xl m-auto py-20">{props.children}</div>
     </section>
   );
 }
