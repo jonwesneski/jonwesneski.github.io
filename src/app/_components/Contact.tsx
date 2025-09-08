@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import TextLink from "./TextLink";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -102,12 +103,20 @@ export default function Contact() {
           <button
             type="submit"
             disabled={loading}
-            className="my-7 border border-background text-background p-2 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 hover:ring-2 hover:ring-orange-500 hover:ring-inset text-shadow-sm hover:[text-shadow:1px_1px_0px_var(--color-orange-500),-1px_1px_0px_var(--color-orange-500),1px_-1px_0px_var(--color-orange-500),-1px_-1px_0px_var(--color-orange-500)]"
+            className="my-7 border border-background text-background p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 hover:ring-2 hover:ring-orange-500 hover:ring-inset text-shadow-sm hover:[text-shadow:1px_1px_0px_var(--color-orange-500),-1px_1px_0px_var(--color-orange-500),1px_-1px_0px_var(--color-orange-500),-1px_-1px_0px_var(--color-orange-500)]"
           >
             {loading ? "Sending..." : "Send Message"}
           </button>
         </div>
       </form>
+      <div className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center border-t border-text">
+        Connect on:{" "}
+        <TextLink
+          href="https://www.linkedin.com/in/jon-wesneski/"
+          targetBlank
+          text="LinkedIn"
+        />
+      </div>
     </section>
   );
 }

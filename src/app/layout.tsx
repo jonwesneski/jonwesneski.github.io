@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { NavBar } from "./_components";
 import { ChangeTheme } from "./_components/ChangeTheme";
-import TextLink from "./_components/TextLink";
+import TextScrollTo from "./_components/TextScrollTo";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -20,6 +20,15 @@ export const metadata: Metadata = {
   description: "Jon Wesneski: Full Stack Developer",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,24 +37,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen`}
       >
         <NavBar>
-          <TextLink href="/#about-me" text="About Me" targetBlank={false} />
-          <TextLink href="/#projects" text="Projects" targetBlank={false} />
-          <TextLink href="/#contact" text="contact" targetBlank={false} />
+          <TextScrollTo scrollToId="about-me" text="About Me" />
+          <TextScrollTo scrollToId="projects" text="Projects" />
+          <TextScrollTo scrollToId="contact" text="Contact" />
           <ChangeTheme />
         </NavBar>
 
-        {children}
+        <div id="top-of-page">{children}</div>
 
         <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center border-t border-text">
-          Connect on:{" "}
-          <TextLink
-            href="https://www.linkedin.com/in/jon-wesneski/"
-            targetBlank
-            text="LinkedIn"
-          />
+          <TextScrollTo scrollToId="top-of-page" text="Back to Top" />
         </footer>
       </body>
     </html>

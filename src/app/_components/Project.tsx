@@ -1,11 +1,11 @@
 "use client";
 
-import TextLink, { ILinkProps } from "./TextLink";
+import TextLink, { ITextLinkProps } from "./TextLink";
 
 interface IProjectProps {
   title: string;
   description: string;
-  links: ILinkProps[];
+  links: ITextLinkProps[];
 }
 export default function Project(props: IProjectProps) {
   return (

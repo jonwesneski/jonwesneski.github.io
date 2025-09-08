@@ -2,26 +2,30 @@
 
 import { mergeCss } from "@src/utils";
 import { ClassValue } from "clsx";
-import Link from "next/link";
 
-export interface ITextLinkProps {
-  href: string;
+export interface ITextScrollToProps {
+  scrollToId: string;
   text: string;
-  targetBlank: boolean;
   className?: ClassValue;
 }
-export default function TextLink(props: ITextLinkProps) {
+export default function TextScrollTo(props: ITextScrollToProps) {
+  const scrollToDiv = (id: string) => {
+    const element = document.getElementById(id);
+    console.log(element, id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <Link
-      key={props.href}
+    <button
       className={mergeCss(
         "inline-block border bg-transparent p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 hover:ring-2 hover:ring-orange-500 hover:ring-inset text-shadow-sm hover:[text-shadow:1px_1px_0px_var(--color-orange-500),-1px_1px_0px_var(--color-orange-500),1px_-1px_0px_var(--color-orange-500),-1px_-1px_0px_var(--color-orange-500)]",
         props.className
       )}
-      href={props.href}
-      target={props.targetBlank ? "_blank" : undefined}
+      onClick={() => scrollToDiv(props.scrollToId)}
     >
       {props.text}
-    </Link>
+    </button>
   );
 }

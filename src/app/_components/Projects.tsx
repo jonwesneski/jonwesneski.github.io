@@ -6,7 +6,7 @@ export default function Projects() {
       <h1 className="text-2xl font-bold my-2 text-black-white">Projects</h1>
       <div className="flex flex-col gap-10">
         <Project
-          title="Recipehall"
+          title="recipehall."
           description={`A social media app for recipes. This app is still in early stage but currently:
           - Anyone can create a recipe
           - Add images which inspected for moderation
