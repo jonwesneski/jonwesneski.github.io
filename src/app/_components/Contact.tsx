@@ -1,7 +1,9 @@
 "use client";
 
+import GitHubIcon from "@public/github.svg";
+import LinkedinIcon from "@public/linkedin.svg";
 import React, { useState } from "react";
-import TextLink from "./TextLink";
+import { SocialLink } from "./SocialLink";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -109,12 +111,15 @@ export default function Contact() {
           </button>
         </div>
       </form>
-      <div className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center border-t border-text">
+      <div className="mt-10 row-start-3 flex gap-[24px] flex-wrap items-center justify-center border-text">
         Connect on:{" "}
-        <TextLink
-          href="https://www.linkedin.com/in/jon-wesneski/"
-          targetBlank
-          text="LinkedIn"
+        <SocialLink
+          href="https://www.linkedin.com/in/jon-wesneski"
+          svgIcon={LinkedinIcon}
+        />
+        <SocialLink
+          href="https://github.com/jonwesneski"
+          svgIcon={GitHubIcon}
         />
       </div>
     </section>
