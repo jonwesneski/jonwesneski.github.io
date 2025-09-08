@@ -7,7 +7,14 @@ export default function Projects() {
       <div className="flex flex-col gap-10">
         <Project
           title="Recipehall"
-          description="A social media app for recipes"
+          description={`A social media app for recipes. This app is still in early stage but currently:
+          - Anyone can create a recipe
+          - Add images which inspected for moderation
+          - Use your phone camera to take pictures
+          - Like other peoples recipe
+          - Share the recipe
+          - Convert measurements of an ingredient
+          - Keep your screen awake`}
           links={[
             {
               href: "https://recipes-ui-tau.vercel.app/",
