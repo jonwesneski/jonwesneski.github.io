@@ -46,7 +46,7 @@ export default function Projects() {
           ]}
         />
         <Project
-          title="Style Guide Scrapper"
+          title="Style Guide Scraper"
           description={`This is a lightweight tool for scraping images from clothing e-commerce websites. It's handy for collecting product images in bulk, whether for research, prototyping, or personal projects.
 
 The tool fetches images asynchronously for faster performance, while respecting each site's robots.txt rules. It also includes built-in rate limiting to avoid overwhelming servers.
