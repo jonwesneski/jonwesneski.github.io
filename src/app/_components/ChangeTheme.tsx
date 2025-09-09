@@ -16,7 +16,7 @@ export const ChangeTheme = (props: IChangeThemeProps) => {
 
   useEffect(() => {
     setTheme(isWhiteBlack);
-  }, []);
+  }, [isWhiteBlack]);
 
   const handleLightDarkMode = () => {
     setIsWhiteBlack((v) => {
