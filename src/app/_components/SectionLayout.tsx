@@ -24,7 +24,9 @@ export default function SectionLayout({
         props.className
       )}
     >
-      <div className="max-w-2xl m-auto py-20">{props.children}</div>
+      <div className="max-w-xs md:max-w-2xl mx-auto py-20">
+        {props.children}
+      </div>
     </section>
   );
 }
