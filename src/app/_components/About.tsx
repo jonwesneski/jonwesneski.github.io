@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -6,10 +7,19 @@ export default function About() {
       <h1 className="text-2xl font-bold my-2 text-white-black">About Me</h1>
       <p className="my-2">
         Hi, I am{" "}
-        <span className="bg-linear-to-br bg-clip-text text-transparent from-orange-500 via-orange-300 to-yellow-500 font-extrabold">
+        <span className="bg-linear-to-br bg-clip-text text-transparent from-orange-500 via-yellow-500 to-orange-500 font-extrabold">
           Jon Wesneski
         </span>
       </p>
+
+      <div className="relative w-[150px] h-[280px] md:w-[300px] md:h-[500px] float-right ml-3 mb-3 border border-text">
+        <Image
+          src="/jon-wesneski.jpg"
+          alt="the sweet boy - Jon Wesneski of 37"
+          fill
+          className="object-cover"
+        />
+      </div>
       <p className="my-2">
         As a Fullstack Developer and seasoned Software Development Engineer in
         Test (SDET), I specialize in building robust, scalable web applications
