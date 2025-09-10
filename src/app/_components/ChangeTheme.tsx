@@ -11,7 +11,7 @@ export const ChangeTheme = (props: IChangeThemeProps) => {
   const [isWhiteBlack, setIsWhiteBlack] = useState(true);
 
   const setTheme = (value: boolean) => {
-    document.documentElement.setAttribute("data-theme", value ? "dark" : "");
+    document.documentElement.setAttribute("data-theme", value ? "" : "dark");
   };
 
   useEffect(() => {

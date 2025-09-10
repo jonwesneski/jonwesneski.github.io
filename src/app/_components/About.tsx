@@ -12,11 +12,12 @@ export default function About() {
         </span>
       </p>
 
-      <div className="relative w-[150px] h-[280px] md:w-[300px] md:h-[500px] float-right ml-3 mb-3 border border-text">
+      <div className="relative w-[150px] h-[280px] md:w-[300px] md:h-[500px] float-right ml-3 mb-3 border-8 border-text">
         <Image
           src="/jon-wesneski.jpg"
           alt="the sweet boy - Jon Wesneski of 37"
           fill
+          priority
           className="object-cover"
         />
       </div>

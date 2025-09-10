@@ -12,6 +12,43 @@
   --color-border: var(--border);
   --color-text: var(--text);
   --color-muted: var(--muted);
+
+  --animate-moving-bg: moving-bg 15s ease infinite,
+    pulse-bg 12s ease-in-out infinite, rotate-bg 30s linear infinite;
+
+  @keyframes moving-bg {
+    0% {
+      background-position: 0% 30%;
+    }
+    20% {
+      background-position: 80% 70%;
+    }
+    40% {
+      background-position: 40% 0%;
+    }
+    60% {
+      background-position: 100% 20%;
+    }
+    80% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes pulse-bg {
+    0%,
+    100% {
+      background-color: hsl(var(--background-hsl) / 1);
+    }
+    40% {
+      background-color: hsl(var(--background-hsl) / 0.6);
+    }
+    70% {
+      background-color: hsl(var(--background-hsl) / 0.8);
+    }
+  }
 }
 
 @layer base {
@@ -23,6 +60,10 @@
     --border: #000;
     --text: #000;
     --muted: #4444447b;
+    --background-hsl: 100% 100% 100%;
+    --background-from: #7f7f7f;
+    --background-via: #ffffff;
+    --background-to: #7f7f7f;
   }
 
   [data-theme="dark"] {
@@ -33,6 +74,11 @@
     --border: #fff;
     --text: #fff;
     --muted: #bbbbbb7b;
+    --background-hsl: 0% 0% 0%;
+    --background-hsl: 100% 100% 100%;
+    --background-from: #222;
+    --background-via: #000;
+    --background-to: #666;
   }
 }
 

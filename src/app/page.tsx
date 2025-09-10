@@ -6,13 +6,13 @@ import SectionLayout from "./_components/SectionLayout";
 export default function Home() {
   return (
     <main>
-      <SectionLayout id="about-me" variant="whiteBlack">
+      <SectionLayout id="about-me" variant="default">
         <About />
       </SectionLayout>
-      <SectionLayout id="projects" variant="blackWhite">
+      <SectionLayout id="projects" variant="gradient">
         <Projects />
       </SectionLayout>
-      <SectionLayout id="contact" variant="whiteBlack">
+      <SectionLayout id="contact" variant="default">
         <Contact />
       </SectionLayout>
     </main>

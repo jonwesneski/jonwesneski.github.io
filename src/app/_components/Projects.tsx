@@ -2,7 +2,7 @@ import Project from "./Project";
 
 export default function Projects() {
   return (
-    <section>
+    <>
       <h1 className="text-2xl font-bold my-2 text-black-white">Projects</h1>
       <div className="flex flex-col gap-10">
         <Project
@@ -75,6 +75,6 @@ You can run it with a simple configuration file for repeatable setups, or pass o
           ]}
         />
       </div>
-    </section>
+    </>
   );
 }

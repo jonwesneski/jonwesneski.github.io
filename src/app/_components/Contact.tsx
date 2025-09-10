@@ -50,7 +50,7 @@ export default function Contact() {
   };
 
   return (
-    <section>
+    <>
       <h1 className="text-2xl font-bold my-2 text-white-black">Contact Me</h1>
       {success && <p className="text-green-500">Message sent successfully!</p>}
       {error && <p className="text-red-500">{error}</p>}
@@ -122,6 +122,6 @@ export default function Contact() {
           svgIcon={GitHubIcon}
         />
       </div>
-    </section>
+    </>
   );
 }
