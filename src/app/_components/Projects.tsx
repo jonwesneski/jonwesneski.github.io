@@ -1,8 +1,31 @@
+"use client";
+
+import { motion, Variants } from "motion/react";
 import Project from "./Project";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0, x: 100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      duration: 0.6,
+      staggerChildren: 0.1,
+      delayChildren: 0.05,
+      when: "beforeChildren",
+    },
+  },
+};
 
 export default function Projects() {
   return (
-    <>
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+    >
       <h1 className="text-2xl font-bold my-2 text-black-white">Projects</h1>
       <div className="flex flex-col gap-10">
         <Project
@@ -75,6 +98,6 @@ You can run it with a simple configuration file for repeatable setups, or pass o
           ]}
         />
       </div>
-    </>
+    </motion.div>
   );
 }

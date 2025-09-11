@@ -5,7 +5,7 @@ import { mergeCss } from "@src/utils";
 
 export const NavBar = ({ children }: { children: React.ReactNode }) => {
   const { width, breakpointPxs } = useMediaQuery();
-  return (
+  return width > 0 ? (
     <nav
       className={mergeCss(
         "fixed left-0 right-0 z-50 flex py-4 justify-center items-center gap-4 bg-background text-text border-b border-text",
@@ -17,5 +17,5 @@ export const NavBar = ({ children }: { children: React.ReactNode }) => {
     >
       {children}
     </nav>
-  );
+  ) : null;
 };

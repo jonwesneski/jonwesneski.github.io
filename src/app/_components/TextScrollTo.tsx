@@ -11,7 +11,6 @@ export interface ITextScrollToProps {
 export default function TextScrollTo(props: ITextScrollToProps) {
   const scrollToDiv = (id: string) => {
     const element = document.getElementById(id);
-    console.log(element, id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
