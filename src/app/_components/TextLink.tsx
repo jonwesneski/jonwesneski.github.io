@@ -28,6 +28,7 @@ const TextLink = React.forwardRef<HTMLAnchorElement, ITextLinkProps>(
     </Link>
   )
 );
+TextLink.displayName = "MotionTextLink";
 const MotionTextLink = motion.create(TextLink);
 
 export default MotionTextLink;
