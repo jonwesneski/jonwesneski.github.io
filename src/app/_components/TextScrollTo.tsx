@@ -2,6 +2,7 @@
 
 import { mergeCss } from "@src/utils";
 import { ClassValue } from "clsx";
+import { motion } from "motion/react";
 
 export interface ITextScrollToProps {
   scrollToId: string;
@@ -17,7 +18,11 @@ export default function TextScrollTo(props: ITextScrollToProps) {
   };
 
   return (
-    <button
+    <motion.button
+      whileHover={{
+        scale: 1.2,
+        // transition: { duration: 1 },
+      }}
       className={mergeCss(
         "inline-block border bg-transparent p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 hover:ring-2 hover:ring-orange-500 hover:ring-inset text-shadow-sm hover:[text-shadow:1px_1px_0px_var(--color-orange-500),-1px_1px_0px_var(--color-orange-500),1px_-1px_0px_var(--color-orange-500),-1px_-1px_0px_var(--color-orange-500)]",
         props.className
@@ -25,6 +30,6 @@ export default function TextScrollTo(props: ITextScrollToProps) {
       onClick={() => scrollToDiv(props.scrollToId)}
     >
       {props.text}
-    </button>
+    </motion.button>
   );
 }

@@ -10,7 +10,6 @@ const containerVariants: Variants = {
     x: 0,
     transition: {
       type: "tween",
-      duration: 2,
       staggerChildren: 0.1,
       delayChildren: 0.1,
       when: "beforeChildren",

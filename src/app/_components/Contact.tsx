@@ -2,6 +2,7 @@
 
 import GitHubIcon from "@public/github.svg";
 import LinkedinIcon from "@public/linkedin.svg";
+import { motion } from "motion/react";
 import React, { useState } from "react";
 import { SocialLink } from "./SocialLink";
 
@@ -102,13 +103,16 @@ export default function Contact() {
             />
           </div>
 
-          <button
+          <motion.button
+            whileHover={{
+              scale: 1.2,
+            }}
             type="submit"
             disabled={loading}
             className="my-7 border border-background text-background p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 hover:ring-2 hover:ring-orange-500 hover:ring-inset text-shadow-sm hover:[text-shadow:1px_1px_0px_var(--color-orange-500),-1px_1px_0px_var(--color-orange-500),1px_-1px_0px_var(--color-orange-500),-1px_-1px_0px_var(--color-orange-500)]"
           >
             {loading ? "Sending..." : "Send Message"}
-          </button>
+          </motion.button>
         </div>
       </form>
       <div className="mt-10 row-start-3 flex gap-[24px] flex-wrap items-center justify-center border-text">

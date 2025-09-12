@@ -12,8 +12,6 @@ const containerVariants: Variants = {
       type: "spring",
       duration: 0.6,
       staggerChildren: 0.1,
-      delayChildren: 0.05,
-      when: "beforeChildren",
     },
   },
 };
