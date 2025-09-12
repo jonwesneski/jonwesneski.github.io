@@ -82,6 +82,12 @@
   }
 }
 
+@layer components {
+  * {
+    @apply transition-colors duration-1500;
+  }
+}
+
 html,
 body {
   max-width: 100%;

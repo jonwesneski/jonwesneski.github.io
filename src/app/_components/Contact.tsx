@@ -2,9 +2,26 @@
 
 import GitHubIcon from "@public/github.svg";
 import LinkedinIcon from "@public/linkedin.svg";
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 import React, { useState } from "react";
 import { SocialLink } from "./SocialLink";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.3,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 1 } },
+};
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -51,14 +68,28 @@ export default function Contact() {
   };
 
   return (
-    <>
-      <h1 className="text-2xl font-bold my-2 text-white-black">Contact Me</h1>
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+    >
+      <motion.h1
+        variants={itemVariants}
+        className="text-2xl font-bold my-2 text-white-black"
+      >
+        Contact Me
+      </motion.h1>
       {success && <p className="text-green-500">Message sent successfully!</p>}
       {error && <p className="text-red-500">{error}</p>}
-      <form onSubmit={handleSubmit} className="mx-auto bg-text max-w-2xl">
-        <div className="flex flex-col items-center">
-          <div className="flex justify-center gap-4">
-            <div className="mt-7">
+      <motion.form
+        variants={itemVariants}
+        onSubmit={handleSubmit}
+        className="mx-auto bg-text max-w-2xl"
+      >
+        <div className="flex flex-col mx-3">
+          <div className="flex flex-wrap gap-4 mt-7">
+            <div>
               <label htmlFor="name" className="text-background block">
                 Name:
               </label>
@@ -73,7 +104,7 @@ export default function Contact() {
               />
             </div>
 
-            <div className="mt-7">
+            <div>
               <label htmlFor="email" className="text-background block">
                 Email:
               </label>
@@ -99,7 +130,8 @@ export default function Contact() {
               value={formData.message}
               onChange={handleChange}
               required
-              className="bg-background text-text pl-1"
+              className="bg-background text-text pl-1 w-full"
+              rows={6}
             />
           </div>
 
@@ -109,12 +141,12 @@ export default function Contact() {
             }}
             type="submit"
             disabled={loading}
-            className="my-7 border border-background text-background p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 hover:ring-2 hover:ring-orange-500 hover:ring-inset text-shadow-sm hover:[text-shadow:1px_1px_0px_var(--color-orange-500),-1px_1px_0px_var(--color-orange-500),1px_-1px_0px_var(--color-orange-500),-1px_-1px_0px_var(--color-orange-500)]"
+            className="my-7 w-36 mx-auto border border-background text-background p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 hover:ring-2 hover:ring-orange-500 hover:ring-inset text-shadow-sm hover:[text-shadow:1px_1px_0px_var(--color-orange-500),-1px_1px_0px_var(--color-orange-500),1px_-1px_0px_var(--color-orange-500),-1px_-1px_0px_var(--color-orange-500)]"
           >
             {loading ? "Sending..." : "Send Message"}
           </motion.button>
         </div>
-      </form>
+      </motion.form>
       <div className="mt-10 row-start-3 flex gap-[24px] flex-wrap items-center justify-center border-text">
         Connect on:{" "}
         <SocialLink
@@ -128,6 +160,6 @@ export default function Contact() {
           ariaLabel="GitHub Profile"
         />
       </div>
-    </>
+    </motion.div>
   );
 }

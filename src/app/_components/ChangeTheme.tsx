@@ -43,7 +43,7 @@ export const ChangeTheme = (props: IChangeThemeProps) => {
         aria-label="Toggle light and dark mode"
       >
         <span
-          className={`bg-white w-6 h-6 rounded-full shadow-md transform duration-300 ${
+          className={`bg-white w-6 h-6 rounded-full shadow-md transform transition-transform duration-1000 ${
             isWhiteBlack ? "" : "translate-x-8"
           }`}
         ></span>

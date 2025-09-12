@@ -51,7 +51,7 @@ const itemVariants: Variants = {
 export default function About() {
   return (
     <>
-      <div className="m-auto flex flex-col items-center">
+      <div className="m-auto mb-14 flex flex-col items-center">
         <motion.h1
           variants={helloVariants}
           initial="hidden"
