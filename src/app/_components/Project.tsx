@@ -45,6 +45,7 @@ export default function Project(props: IProjectProps) {
             targetBlank={l.targetBlank}
             className="mx-2 mt-3"
             variants={itemVariants}
+            whileHover={{ scale: 1.2 }}
           />
         );
       })}

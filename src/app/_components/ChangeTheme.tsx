@@ -40,6 +40,7 @@ export const ChangeTheme = (props: IChangeThemeProps) => {
         )}
         onClick={() => handleLightDarkMode()}
         aria-pressed={isWhiteBlack}
+        aria-label="Toggle light and dark mode"
       >
         <span
           className={`bg-white w-6 h-6 rounded-full shadow-md transform duration-300 ${

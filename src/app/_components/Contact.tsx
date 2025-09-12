@@ -120,10 +120,12 @@ export default function Contact() {
         <SocialLink
           href="https://www.linkedin.com/in/jon-wesneski"
           svgIcon={LinkedinIcon}
+          ariaLabel="LinkedIn Profile"
         />
         <SocialLink
           href="https://github.com/jonwesneski"
           svgIcon={GitHubIcon}
+          ariaLabel="GitHub Profile"
         />
       </div>
     </>
